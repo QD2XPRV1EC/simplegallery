@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">SimpleGallery</string>
+    <string name="title_activity_gallery">GalleryActivity</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="phone">Phone</string>
+    <string name="website">Website</string>
+    <string name="address">Address</string>
+    <string name="company">Company</string>
+    <string name="network_error">Network error!</string>
+    <string name="profile">Profile</string>
+    <string name="albums">Albums</string>
+</resources>

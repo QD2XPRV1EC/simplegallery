@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.example.pawel.simplegallery.ui.album.AlbumPhotoViewModel" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="@{model::showPhoto}"
+        android:padding="@dimen/spacing_small">
+
+        <ImageView
+            android:id="@+id/photo"
+            fromUrl="@{model.photo.thumbnailUrl}"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/colorImagePlaceholder"
+            android:contentDescription="@{model.photo.title}"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

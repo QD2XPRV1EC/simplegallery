@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.example.pawel.simplegallery.ui.photo.PhotoViewModel" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.photo.PhotoActivity">
+
+        <TextView
+            visibleOrGone="@{model.networkError}"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/network_error"
+            android:textSize="@dimen/text_headline"
+            tools:visibility="gone" />
+
+        <it.sephiroth.android.library.imagezoom.ImageViewTouch
+            visibleOrGone="@{!safeUnbox(model.networkError)}"
+            android:id="@+id/photo"
+            fromUrl="@{model.photo.url}"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorImageDarkRoom"
+            android:contentDescription="@{model.photo.title}" />
+
+
+        <TextView
+            visibleOrGone="@{!safeUnbox(model.networkError)}"
+            android:id="@+id/title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorImageDarkRoomBar"
+            android:padding="@dimen/spacing_big"
+            android:text="@{model.photo.title}"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@id/photo"
+            app:layout_constraintEnd_toEndOf="@id/photo"
+            app:layout_constraintStart_toStartOf="@id/photo"
+            tools:text="culpa odio esse rerum omnis laboriosam voluptate repudiandae" />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>
